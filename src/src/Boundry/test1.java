@@ -1,17 +1,14 @@
 package src.Boundry;
 
-import src.Controller.AccountOperation;
-import src.Controller.CustomerOperation;
-import src.Controller.GetInformation;
-import src.Controller.Transfer;
+import src.Controller.*;
 import src.Entity.Account;
 import src.Entity.Customer;
 import src.Entity.Menu;
-
 import java.util.Scanner;
 
 public class test1 {
     public static void main(String[] args) {
+
         Customer customer = new Customer();
         Account account = new Account();
         CustomerOperation customerOperation = new CustomerOperation();
@@ -124,6 +121,7 @@ public class test1 {
                     operation = sc.next();
                     break;
                 case "10":
+
                     Transfer transfer = new Transfer();
                     System.out.println("Please Enter Source Number:");
                     transfer.setSourceAccount(sc.next());
@@ -133,10 +131,21 @@ public class test1 {
                     Account destinationAccount=accountOperation.findAccount(transfer.getDestinationAccount());
                     System.out.println("Please Enter Transfer amount:");
                     transfer.setAmount(sc.nextLong());
+                    NotEnoughAmountException exception=new NotEnoughAmountException(sc.next());
+                    System.out.println("Source amount is:\n"+"Destination amount is:");
+                    try {
+                        throw new NotEnoughAmountException("!!!");
+                    }
+                    catch (Exception e){
+                        System.out.println(e);
+                    }
                     transfer.transfer(sourceAccount,destinationAccount,transfer.getAmount());
-                    System.out.println();
-                    System.out.println("Bye");
+                    menu.menuBar();
+                    operation = sc.next();
+                    break;
             }
+            System.out.println();
+            System.out.println("Bye");
         }
     }
 }

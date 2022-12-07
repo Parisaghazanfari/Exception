@@ -34,8 +34,7 @@ public class Transfer {
     public void setAmount(Long amount) {
         this.amount = amount;
     }
-
-    public void withdraw(Account sourceAcc, Long amount){
+    public void withdraw(Account sourceAcc, Long amount) {
         sourceAcc.setBalance(sourceAcc.getBalance()-amount);
         System.out.println(sourceAcc.getBalance());
     }
