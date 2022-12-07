@@ -2,8 +2,6 @@ package src.Controller;
 
 import src.Entity.Account;
 
-import java.util.Scanner;
-
 public class Transfer {
     String sourceAccount;
     String destinationAccount;

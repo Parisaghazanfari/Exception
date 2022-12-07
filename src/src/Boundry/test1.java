@@ -5,8 +5,7 @@ import src.Entity.Account;
 import src.Entity.Customer;
 import src.Entity.Menu;
 import java.util.Scanner;
-
-public class test1 {
+ class test1 {
     public static void main(String[] args) {
 
         Customer customer = new Customer();
@@ -123,23 +122,25 @@ public class test1 {
                 case "10":
 
                     Transfer transfer = new Transfer();
-                    System.out.println("Please Enter Source Number:");
-                    transfer.setSourceAccount(sc.next());
-                    Account sourceAccount=accountOperation.findAccount(transfer.getSourceAccount());
-                    System.out.println("Please Enter Destination Number:");
-                    transfer.setDestinationAccount(sc.next());
-                    Account destinationAccount=accountOperation.findAccount(transfer.getDestinationAccount());
-                    System.out.println("Please Enter Transfer amount:");
-                    transfer.setAmount(sc.nextLong());
-                    NotEnoughAmountException exception=new NotEnoughAmountException(sc.next());
-                    System.out.println("Source amount is:\n"+"Destination amount is:");
+                    Account sourceAccount = null;
+                    Account destinationAccount = null;
                     try {
-                        throw new NotEnoughAmountException("!!!");
+                        System.out.println("Please Enter Source Number:");
+                        transfer.setSourceAccount(sc.next());
+                         sourceAccount = accountOperation.findAccount(transfer.getSourceAccount());
+                        System.out.println("Please Enter Destination Number:");
+                        transfer.setDestinationAccount(sc.next());
+                         destinationAccount = accountOperation.findAccount(transfer.getDestinationAccount());
+                        System.out.println("Please Enter Transfer amount:");
+                        transfer.setAmount(sc.nextLong());
+                        if (sourceAccount.getBalance() < transfer.getAmount()) {
+                            throw new NotEnoughAmountException();
+                        }
+                    } catch (NotEnoughAmountException e) {
+                        System.out.println(e.getMessage());
                     }
-                    catch (Exception e){
-                        System.out.println(e);
-                    }
-                    transfer.transfer(sourceAccount,destinationAccount,transfer.getAmount());
+                    System.out.println("Source amount is:\n" + "Destination amount is:");
+                    transfer.transfer(sourceAccount, destinationAccount, transfer.getAmount());
                     menu.menuBar();
                     operation = sc.next();
                     break;

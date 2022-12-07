@@ -6,13 +6,10 @@ import java.util.ArrayList;
 public class AccountOperation {
     CustomerOperation customerOperation=new CustomerOperation();
     ArrayList<Account> accounts = new ArrayList<>();
-
-
     public void addAccount(Account account) {
         accounts.add(account);
         System.out.println("Account add successfully:)");
     }
-
     public void deleteAccount(String cartNumberDelete) {
         Account account1 = findCard(cartNumberDelete);
         accounts.remove(account1);
