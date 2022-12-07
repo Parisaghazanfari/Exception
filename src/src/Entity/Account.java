@@ -15,6 +15,50 @@ public class Account {
     public Account() {
     }
 
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getShebaNumber() {
+        return shebaNumber;
+    }
+
+    public void setShebaNumber(String shebaNumber) {
+        this.shebaNumber = shebaNumber;
+    }
+
+    public int getCvv2() {
+        return cvv2;
+    }
+
+    public void setCvv2(int cvv2) {
+        this.cvv2 = cvv2;
+    }
+
+    public int getExpireMonth() {
+        return expireMonth;
+    }
+
+    public void setExpireMonth(int expireMonth) {
+        this.expireMonth = expireMonth;
+    }
+
+    public int getExpireYear() {
+        return expireYear;
+    }
+
+    public void setExpireYear(int expireYear) {
+        this.expireYear = expireYear;
+    }
+
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public int getBranchCode() {
+        return branchCode;
+    }
+
     public String getCardNumber() {
         return cardNumber;
     }

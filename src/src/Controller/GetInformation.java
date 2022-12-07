@@ -30,31 +30,31 @@ public class GetInformation {
         Random random = new Random();
         Account account = new Account();
         System.out.println("Please enter your information");
-//        System.out.println(" Cart Number:");
-//        System.out.print("5859");
-//        account.setCardNumber(sc.next());
+        System.out.println(" Cart Number:");
+        System.out.print("5859");
+        account.setCardNumber(sc.next());
         System.out.println(" Account Number");
         account.setAccountNumber(sc.next());
-//        System.out.println(" Balance Amount");
+        System.out.println(" Balance Amount");
         System.out.println();
-//        System.out.println(" Account Sheba Number:");
-//        System.out.print("IR-");
-//        account.setShebaNumber(sc.next());
-//        System.out.println(" Account CVV2:");
-//        account.setCvv2(sc.nextInt());
-//        System.out.println(" Account Expire Month:");
-//        account.setExpireMonth(random.nextInt(12));
-//        if(account.getExpireMonth()<10){
-//            System.out.println("0"+account.getExpireMonth());
-//        }
-//        else
-//            System.out.println(account.getExpireMonth());
-//        System.out.println(" Account Expire Year:");
-//        account.setExpireYear(random.nextInt(10));
-//        if (account.getExpireYear()<10)
-//            System.out.println("0"+account.getExpireYear());
-//        else
-//            System.out.println(account.getExpireYear());
+        System.out.println(" Account Sheba Number:");
+        System.out.print("IR-");
+        account.setShebaNumber(sc.next());
+        System.out.println(" Account CVV2:");
+        account.setCvv2(sc.nextInt());
+        System.out.println(" Account Expire Month:");
+        account.setExpireMonth(random.nextInt(12));
+        if(account.getExpireMonth()<10){
+            System.out.println("0"+account.getExpireMonth());
+        }
+        else
+            System.out.println(account.getExpireMonth());
+        System.out.println(" Account Expire Year:");
+        account.setExpireYear(random.nextInt(10));
+        if (account.getExpireYear()<10)
+            System.out.println("0"+account.getExpireYear());
+        else
+            System.out.println(account.getExpireYear());
         System.out.println("Account Initial Amount:");
         AccountOperation accountOperation = new AccountOperation();
         Long amount;
@@ -70,12 +70,12 @@ public class GetInformation {
         }
         account.setBalance(amount);
         System.out.println(account.getBalance());
-//        System.out.println("Branch Name is:");
-//        System.out.println("\n" + account.getBranchName());
-//        System.out.println("Branch Code is:");
-//        System.out.println("\n" + account.getBranchCode());
-//        System.out.println("Balance Amount is:");
-//        account.setBalance(sc.nextDouble());
+        System.out.println("Branch Name is:");
+        System.out.println("\n" + account.getBranchName());
+        System.out.println("Branch Code is:");
+        System.out.println("\n" + account.getBranchCode());
+        System.out.println("Balance Amount is:");
+        account.setBalance(sc.nextLong());
         return account;
     }
 }
